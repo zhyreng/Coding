@@ -4,11 +4,13 @@ import java.util.Scanner;
 import java.util.Vector;
 import java.util.regex.Pattern;
 
-public class CMDRW extends Thread {
+public class CMDRW implements Runnable{
     List<Money> money;
     public CMDRW(List<Money> money){
         this.money = money;
     }
+
+    @Override
     public void run(){
         Scanner s = new Scanner(System.in);
         CMDReader(s);
